@@ -11,7 +11,7 @@ interface ConsentSectionProps {
   consents: ConsentOption[];
 }
 
-const releaseSoftOptIns = false;
+const releaseSoftOptIns = true;
 const softOptInEmailConsents = (consents: ConsentOption[]): ConsentOption[] =>
   consents.filter(consent => !!consent.isProduct && releaseSoftOptIns);
 

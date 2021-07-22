@@ -36,7 +36,10 @@ router.get("/robots.txt", (_, res: Response) => {
     "User-agent: AdsBot-Google\n" +
     "User-agent: AdsBot-Google-Mobile\n" +
     "Disallow: /\n\n";
-  const prodAccessList = allowHelpCentre + disallowGoogleAdsBots;
+  const helpCentreSitemap =
+    "Sitemap: https://manage.theguardian.com/sitemap.txt\n\n";
+  const prodAccessList =
+    allowHelpCentre + disallowGoogleAdsBots + helpCentreSitemap;
   const preProdAccessList = disallowAll;
   const accessList =
     conf.ENVIRONMENT === Environments.PRODUCTION
